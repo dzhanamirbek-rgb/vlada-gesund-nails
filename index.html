@@ -68,11 +68,11 @@
 
   /* ---- HERO ---- */
   .hero{
-    padding:64px 0 40px;
+    padding:72px 0 48px;
     position:relative;
   }
   .hero .wrap{
-    display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center;
+    display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;
   }
   .eyebrow{
     font-family:'Space Mono', monospace;
@@ -114,116 +114,241 @@
 
   /* ---- GALLERY STRIP ---- */
   .gallery-strip{
-    display:grid; grid-template-columns:repeat(5,1fr); gap:6px;
-    padding:6px 0 0;
+    display:grid; grid-template-columns:repeat(5,1fr); gap:8px;
+    padding:12px 32px 0;
+    max-width:1080px; margin:0 auto;
   }
   .gallery-strip img{
-    width:100%; height:150px; object-fit:cover; display:block;
-    filter:saturate(1.02);
+    width:100%; height:160px; object-fit:cover; display:block;
+    filter:saturate(1.02); border-radius:2px;
   }
 
   /* ---- SECTION SHARED ---- */
-  section{padding:80px 0;}
+  section{padding:72px 0;}
   .section-head{
     display:flex; justify-content:space-between; align-items:flex-end;
-    margin-bottom:44px; gap:24px; flex-wrap:wrap;
-    border-bottom:1px solid var(--line); padding-bottom:24px;
+    margin-bottom:56px; gap:24px; flex-wrap:wrap;
+    border-bottom:1px solid var(--line); padding-bottom:32px;
   }
-  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);}
-  .section-head .num{font-family:'Space Mono',monospace; font-size:0.75rem; opacity:0.5;}
+  .section-head h2{font-size:clamp(1.8rem,3.2vw,2.4rem); line-height:1.1;}
+  .section-head .num{font-family:'Space Mono',monospace; font-size:0.72rem; opacity:0.5; text-transform:uppercase; letter-spacing:0.08em;}
 
   /* ---- ABOUT ---- */
-  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px;}
-  .about-grid p{line-height:1.75; opacity:0.85; margin-bottom:16px; font-size:0.98rem;}
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:72px;}
+  .about-grid p{line-height:1.8; opacity:0.85; margin-bottom:18px; font-size:0.99rem;}
   .credentials{display:flex; flex-direction:column; gap:0;}
   .credential{
-    display:flex; gap:18px; padding:18px 0; border-bottom:1px solid var(--line);
+    display:flex; gap:20px; padding:24px 0; border-bottom:1px solid var(--line);
   }
   .credential:first-child{padding-top:0;}
   .credential .icon{
-    font-family:'Fraunces',serif; font-size:1.4rem; color:var(--plum); min-width:34px;
+    font-family:'Fraunces',serif; font-size:1.5rem; color:var(--plum); min-width:40px; font-weight:600;
   }
-  .credential h4{font-size:0.95rem; margin-bottom:4px; font-weight:600; font-family:'Inter',sans-serif;}
-  .credential p{font-size:0.86rem; opacity:0.7; margin:0; line-height:1.5;}
+  .credential h4{font-size:0.96rem; margin-bottom:6px; font-weight:600; font-family:'Inter',sans-serif;}
+  .credential p{font-size:0.87rem; opacity:0.7; margin:0; line-height:1.6;}
 
   /* ---- SERVICES (menu style) ---- */
-  .services-cols{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
-  .service-cat h3{
-    font-size:1.15rem; margin-bottom:6px;
+  .services-section{margin-bottom:40px;}
+  .service-category{
+    font-size:1.35rem; margin-bottom:32px; font-weight:500; font-family:'Fraunces',serif;
+    padding-bottom:16px; border-bottom:2px solid var(--plum);
   }
-  .service-cat .cat-tag{
-    font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.1em;
-    text-transform:uppercase; color:var(--plum); display:block; margin-bottom:18px;
+  .service-detailed{
+    padding:24px; margin-bottom:20px;
+    border:1px solid var(--line); border-radius:3px;
+    background:rgba(92,35,51,0.02); transition:box-shadow .3s;
   }
-  .service-item{
-    display:flex; align-items:baseline; gap:8px;
-    padding:14px 0; border-bottom:1px dotted var(--line);
+  .service-detailed:hover{box-shadow:0 4px 12px rgba(92,35,51,0.08);}
+  .service-header{
+    display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px;
+    flex-wrap:wrap; gap:12px;
   }
-  .service-item .s-name{font-size:0.95rem; font-weight:500;}
-  .service-item .s-dur{font-size:0.76rem; opacity:0.55; font-family:'Space Mono',monospace; white-space:nowrap;}
-  .service-item .s-fill{flex:1; border-bottom:1px dotted var(--line); position:relative; top:-4px;}
-  .service-item .s-price{font-family:'Space Mono',monospace; font-size:0.92rem; font-weight:700; color:var(--plum); white-space:nowrap;}
+  .service-detailed h4{font-size:1.08rem; margin-bottom:0; font-weight:600; font-family:'Fraunces',serif;}
+  .service-meta{
+    font-family:'Space Mono',monospace; font-size:0.78rem;
+    color:var(--plum); font-weight:600; letter-spacing:0.08em;
+    white-space:nowrap;
+  }
+  .service-meta .duration{opacity:0.8;}
+  .service-meta .price{font-size:1rem;}
+  .service-info{
+    font-size:0.85rem; font-weight:600; opacity:0.7;
+    margin-top:12px; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.05em;
+  }
+  .service-includes{
+    list-style:none; padding:0; margin:0;
+  }
+  .service-includes li{
+    font-size:0.92rem; line-height:1.6; opacity:0.85;
+    padding-left:20px; position:relative;
+  }
+  .service-includes li::before{
+    content:'✓'; position:absolute; left:0; color:var(--plum); font-weight:700;
+  }
 
   /* ---- AVAILABILITY ---- */
   .avail-strip{
     display:flex; gap:0; flex-wrap:wrap;
-    border:1px solid var(--line); border-radius:2px; overflow:hidden;
-    margin-top:44px;
+    border:1px solid var(--line); border-radius:3px; overflow:hidden;
+    background:rgba(92,35,51,0.02);
   }
   .avail-day{
-    flex:1; min-width:110px; padding:16px 14px; border-right:1px solid var(--line);
+    flex:1; min-width:120px; padding:20px 16px; border-right:1px solid var(--line);
     text-align:center;
   }
   .avail-day:last-child{border-right:none;}
-  .avail-day .d{font-family:'Space Mono',monospace; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.06em; opacity:0.55; margin-bottom:6px;}
-  .avail-day .t{font-size:0.86rem; font-weight:500;}
+  .avail-day .d{font-family:'Space Mono',monospace; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.08em; opacity:0.6; margin-bottom:8px; font-weight:600;}
+  .avail-day .t{font-size:0.9rem; font-weight:500;}
 
   /* ---- REVIEWS ---- */
-  .review-band{background:var(--plum); color:var(--cream);}
+  .review-band{background:var(--plum); color:var(--cream); padding:80px 0;}
   .review-band .section-head{border-bottom-color:rgba(246,240,231,0.2);}
   .review-band .section-head .num{opacity:0.6;}
-  .reviews-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  .reviews-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:32px;}
   .review-card{
-    background:rgba(246,240,231,0.06);
-    border:1px solid rgba(246,240,231,0.16);
-    padding:26px 24px; border-radius:2px;
+    background:rgba(246,240,231,0.08);
+    border:1px solid rgba(246,240,231,0.18);
+    padding:32px 28px; border-radius:3px;
   }
-  .review-card .stars{color:var(--gold); margin-bottom:14px; display:block; letter-spacing:2px;}
-  .review-card p{font-size:0.92rem; line-height:1.6; opacity:0.92; margin-bottom:18px;}
-  .review-card .meta{font-family:'Space Mono',monospace; font-size:0.72rem; opacity:0.65;}
+  .review-card .stars{color:var(--gold); margin-bottom:16px; display:block; letter-spacing:2px; font-size:1.1rem;}
+  .review-card p{font-size:0.95rem; line-height:1.7; opacity:0.95; margin-bottom:20px;}
+  .review-card .meta{font-family:'Space Mono',monospace; font-size:0.71rem; opacity:0.68;}
 
   /* ---- LOCATION / CONTACT ---- */
-  .loc-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
-  .loc-grid img{width:100%; border-radius:2px; display:block;}
+  .loc-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:stretch;}
+  .loc-grid img{width:100%; border-radius:3px; display:block; height:100%; object-fit:cover;}
   .contact-list{display:flex; flex-direction:column; gap:0;}
   .contact-row{
-    display:flex; justify-content:space-between; align-items:center;
-    padding:20px 0; border-bottom:1px solid var(--line);
+    display:flex; flex-direction:column; gap:6px;
+    padding:24px 0; border-bottom:1px solid var(--line);
   }
-  .contact-row .label{font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase; opacity:0.55;}
-  .contact-row .value{font-size:0.98rem; font-weight:500;}
+  .contact-row .label{font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; opacity:0.6; font-weight:600;}
+  .contact-row .value{font-size:1rem; font-weight:500;}
   .contact-row .value:hover{color:var(--plum);}
 
   /* ---- CTA FOOTER ---- */
   .cta-final{
-    text-align:center; padding:100px 0 70px;
+    text-align:center; padding:96px 0 72px; background:rgba(92,35,51,0.02);
   }
-  .cta-final h2{font-size:clamp(2rem,4vw,2.8rem); margin-bottom:20px;}
-  .cta-final p{opacity:0.75; margin-bottom:34px; max-width:44ch; margin-left:auto; margin-right:auto;}
+  .cta-final h2{font-size:clamp(2rem,4.2vw,2.9rem); margin-bottom:24px; line-height:1.1;}
+  .cta-final p{opacity:0.78; margin-bottom:40px; max-width:50ch; margin-left:auto; margin-right:auto; font-size:1.01rem; line-height:1.7;}
   footer{
-    border-top:1px solid var(--line); padding:36px 0; font-size:0.8rem; opacity:0.6;
+    border-top:1px solid var(--line); padding:40px 0; font-size:0.8rem; opacity:0.6;
   }
-  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px;}
 
   @media (max-width: 860px){
-    .hero .wrap{grid-template-columns:1fr; gap:36px;}
+    .wrap{padding:0 24px;}
+    .hero{padding:56px 0 36px;}
+    .hero .wrap{grid-template-columns:1fr; gap:40px;}
     .hero-photo{order:-1;}
-    .about-grid, .services-cols, .loc-grid, .reviews-grid{grid-template-columns:1fr; gap:36px;}
-    .gallery-strip{grid-template-columns:repeat(3,1fr);}
+    .hero h1{font-size:clamp(2rem, 5vw, 2.8rem);}
+    .about-grid, .services-cols, .loc-grid, .reviews-grid{grid-template-columns:1fr; gap:40px;}
+    .services-cols{gap:48px;}
+    .gallery-strip{grid-template-columns:repeat(3,1fr); gap:6px; padding:10px 24px 0;}
     .gallery-strip img:nth-child(4), .gallery-strip img:nth-child(5){display:none;}
-    .avail-day{min-width:33%;}
-    .nav-links{gap:16px; font-size:0.8rem;}
+    .gallery-strip img{height:140px;}
+    .avail-strip{flex-wrap:nowrap;}
+    .avail-day{min-width:auto; padding:16px 12px; font-size:0.9rem;}
+    .nav-links{gap:14px; font-size:0.78rem;}
     .nav-links a:not(.btn){display:none;}
+    section{padding:56px 0;}
+    .section-head{margin-bottom:40px; padding-bottom:24px;}
+  }
+
+  /* ---- PORTFOLIO ---- */
+  .portfolio-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .portfolio-item{text-align:center; cursor:pointer; transition:transform .3s;}
+  .portfolio-item:hover{transform:translateY(-6px);}
+  .portfolio-item img{width:100%; aspect-ratio:1; object-fit:cover; border-radius:3px; margin-bottom:12px;}
+  .portfolio-item h4{font-size:1rem; margin-bottom:4px;}
+  .portfolio-item p{font-size:0.85rem; opacity:0.6;}
+
+  /* ---- TREATMENT STEPS ---- */
+  .treatment-steps{display:grid; grid-template-columns:repeat(5,1fr); gap:28px;}
+  .treatment-step{text-align:center;}
+  .treatment-step .step-num{font-family:'Fraunces',serif; font-size:2.4rem; color:var(--plum); font-weight:600; margin-bottom:12px;}
+  .treatment-step h3{font-size:1.05rem; margin-bottom:12px;}
+  .treatment-step p{font-size:0.88rem; line-height:1.65; opacity:0.8;}
+
+  /* ---- BEFORE/AFTER ---- */
+  .beforeafter-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:32px;}
+  .beforeafter-card{border:1px solid var(--line); border-radius:3px; overflow:hidden;}
+  .ba-images{display:grid; grid-template-columns:1fr 1fr; gap:0; aspect-ratio:1;}
+  .ba-before, .ba-after{position:relative; overflow:hidden;}
+  .ba-before p, .ba-after p{position:absolute; top:8px; left:8px; font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.1em; background:rgba(0,0,0,0.4); color:white; padding:4px 8px; border-radius:2px; z-index:10;}
+  .ba-before img, .ba-after img{width:100%; height:100%; object-fit:cover;}
+  .beforeafter-card h4{padding:16px 16px 6px; font-size:0.98rem;}
+  .beforeafter-card p{padding:0 16px 16px; font-size:0.85rem; opacity:0.7;}
+
+  /* ---- POPULAR DESIGNS ---- */
+  .popular-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:40px;}
+  .popular-card{border:1px solid var(--line); border-radius:3px; overflow:hidden;}
+  .popular-image{width:100%; aspect-ratio:1; overflow:hidden;}
+  .popular-image img{width:100%; height:100%; object-fit:cover;}
+  .popular-card h3{padding:20px 20px 8px; font-size:1.1rem;}
+  .popular-card p{padding:0 20px 16px; font-size:0.9rem; line-height:1.6; opacity:0.8;}
+  .popular-meta{padding:0 20px 20px;}
+  .badge{display:inline-block; background:rgba(92,35,51,0.1); color:var(--plum); padding:6px 12px; border-radius:2px; font-size:0.78rem; font-weight:600;}
+
+  /* ---- SEASONAL ---- */
+  .seasonal-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:40px;}
+  .seasonal-item{padding:28px; border:1px solid var(--line); border-radius:3px;}
+  .seasonal-item h3{font-size:1.2rem; margin-bottom:12px;}
+  .seasonal-item p{font-size:0.95rem; line-height:1.7; opacity:0.85;}
+
+  /* ---- EDUCATION ---- */
+  .education-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:40px;}
+  .education-item{padding:28px; background:rgba(92,35,51,0.04); border-radius:3px;}
+  .education-item h3{font-size:1.1rem; margin-bottom:12px;}
+  .education-item p{font-size:0.95rem; line-height:1.7; opacity:0.85;}
+
+  /* ---- CARE TIPS ---- */
+  .care-tips{display:grid; grid-template-columns:repeat(2,1fr); gap:32px;}
+  .care-item{padding:24px; border:1px solid var(--line); border-radius:3px;}
+  .care-item h3{font-size:1.05rem; margin-bottom:12px;}
+  .care-item p{font-size:0.92rem; line-height:1.7; opacity:0.85;}
+
+  /* ---- BLOG ---- */
+  .blog-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:32px;}
+  .blog-card{padding:28px; border:1px solid var(--line); border-radius:3px; transition:box-shadow .3s;}
+  .blog-card:hover{box-shadow:0 8px 24px rgba(0,0,0,0.08);}
+  .blog-date{font-family:'Space Mono',monospace; font-size:0.72rem; color:var(--plum); font-weight:600; text-transform:uppercase; margin-bottom:12px; letter-spacing:0.08em;}
+  .blog-card h3{font-size:1.1rem; margin-bottom:12px; line-height:1.3;}
+  .blog-card p{font-size:0.92rem; line-height:1.7; opacity:0.8; margin-bottom:16px;}
+  .blog-link{font-weight:600; color:var(--plum); font-size:0.9rem; transition:opacity .2s;}
+  .blog-link:hover{opacity:0.7;}
+
+  /* ---- FAQ GRID ---- */
+  .faq-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:28px;}
+  .faq-item{padding:24px; border:1px solid var(--line); border-radius:3px;}
+  .faq-item h3{font-size:1rem; margin-bottom:12px; font-weight:600;}
+  .faq-item p{font-size:0.92rem; line-height:1.7; opacity:0.8;}
+
+  @media (max-width: 600px){
+    .wrap{padding:0 18px;}
+    .hero{padding:48px 0 28px;}
+    .hero .wrap{gap:32px;}
+    .hero h1{font-size:clamp(1.6rem, 6vw, 2.3rem); margin-bottom:16px;}
+    .hero p.lede{font-size:0.96rem; margin-bottom:24px;}
+    .hero-actions{gap:14px;}
+    .brand{font-size:1.1rem;}
+    .nav-links{gap:12px;}
+    .about-grid, .services-cols, .loc-grid, .reviews-grid, .portfolio-grid, .treatment-steps, .beforeafter-grid, .popular-grid, .seasonal-grid, .education-grid, .care-tips, .blog-grid, .faq-grid{grid-template-columns:1fr; gap:24px;}
+    .services-cols{margin-bottom:48px; gap:40px;}
+    .service-item{padding:12px 0;}
+    .gallery-strip{grid-template-columns:repeat(2,1fr); gap:6px; padding:8px 18px 0;}
+    .gallery-strip img{height:120px;}
+    section{padding:48px 0;}
+    .section-head{margin-bottom:32px; padding-bottom:20px;}
+    .cta-final{padding:72px 0 56px;}
+    .cta-final h2{font-size:clamp(1.6rem, 5vw, 2.2rem); margin-bottom:16px;}
+    footer{padding:32px 0;}
+    .portfolio-grid{grid-template-columns:repeat(2,1fr);}
+    .treatment-step .step-num{font-size:1.8rem;}
+    .ba-images{grid-template-columns:1fr;}
+    .beforeafter-card h4{padding:14px 14px 6px;}
+    .beforeafter-card p{padding:0 14px 14px;}
   }
 </style>
 </head>
@@ -234,7 +359,9 @@
     <div class="brand">Vlada <span>Gesund Nails</span></div>
     <div class="nav-links">
       <a href="#angebot">Angebot</a>
-      <a href="#bewertungen">Bewertungen</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#faq">FAQ</a>
+      <a href="#blog">Tipps</a>
       <a href="#kontakt">Kontakt</a>
       <a class="btn" href="https://beautinda.de/book/UPpRVEiQCadOSLmZ5o8Wfs9qrXl1/orders">Termin buchen</a>
     </div>
@@ -263,11 +390,10 @@
 </header>
 
 <div class="gallery-strip">
-  <img src="images/nail-01.png" alt="Nageldesign Arbeit — Herzchen-Design auf French">
-  <img src="images/nail-02.png" alt="Nageldesign Arbeit — Kirsch-Design auf Naturnägeln">
-  <img src="images/nail-03.png" alt="Nageldesign Arbeit — Nude Ombré Mandelform">
-  <img src="images/nail-04.png" alt="Nageldesign Arbeit — Zartrosa Glanzlack">
-  <img src="images/nail-05.png" alt="Nageldesign Arbeit — Nude Glanzlack mit Glitter">
+  <img src="nail-01-hearts.png" alt="Nageldesign Arbeit — Herzchen-Design auf French">
+  <img src="nail-02-cherries.png" alt="Nageldesign Arbeit — Kirsch-Design auf Naturnägeln">
+  <img src="nail-03-ombre.png" alt="Nageldesign Arbeit — Nude Ombré Mandelform">
+  <img src="nail-04-nude.png" alt="Nageldesign Arbeit — Zartrosa Glanzlack">
 </div>
 
 <section id="ueber">
@@ -310,24 +436,176 @@
       <h2>Das Angebot</h2>
       <span class="num">02 — Leistungen</span>
     </div>
-    <div class="services-cols">
-      <div class="service-cat">
-        <span class="cat-tag">Kategorie</span>
-        <h3>Maniküre</h3>
-        <div class="service-item"><span class="s-name">Einfach Maniküre</span><span class="s-fill"></span><span class="s-dur">1 Std.</span><span class="s-price">30 €</span></div>
-        <div class="service-item"><span class="s-name">Refill mit Natur &amp; Farbe</span><span class="s-fill"></span><span class="s-dur">1 Std. 15 Min.</span><span class="s-price">50 €</span></div>
-        <div class="service-item"><span class="s-name">Refill mit ein Paar Design Nägel</span><span class="s-fill"></span><span class="s-dur">1 Std. 20 Min.</span><span class="s-price">55 €</span></div>
-        <div class="service-item"><span class="s-name">Refill mit French &amp; Babyboomer</span><span class="s-fill"></span><span class="s-dur">1 Std. 30 Min.</span><span class="s-price">60 €</span></div>
-        <div class="service-item"><span class="s-name">Verlängerung mit Farbe</span><span class="s-fill"></span><span class="s-dur">1 Std. 30 Min.</span><span class="s-price">60 €</span></div>
-        <div class="service-item"><span class="s-name">Verlängerung mit ein Paar Nägel Design</span><span class="s-fill"></span><span class="s-dur">1 Std. 30 Min.</span><span class="s-price">65 €</span></div>
-        <div class="service-item"><span class="s-name">Verlängerung mit French &amp; Babyboomer</span><span class="s-fill"></span><span class="s-dur">1 Std. 40 Min.</span><span class="s-price">70 €</span></div>
+
+    <!-- MANIKÜRE -->
+    <div class="services-section">
+      <h3 class="service-category">💅 Maniküre</h3>
+
+      <div class="service-detailed">
+        <div class="service-header">
+          <h4>Einfach Maniküre</h4>
+          <div class="service-meta"><span class="duration">1 Std.</span> • <span class="price">30 €</span></div>
+        </div>
+        <ul class="service-includes">
+          <li>Nägel kürzen und feilen</li>
+          <li>Nagelhaut pflegen und entfernen</li>
+          <li>Nägel polieren</li>
+          <li>Pflegeöl und Handcreme</li>
+        </ul>
       </div>
-      <div class="service-cat">
-        <span class="cat-tag">Kategorie</span>
-        <h3>Pediküre</h3>
-        <div class="service-item"><span class="s-name">Einfach Fußpflege</span><span class="s-fill"></span><span class="s-dur">1 Std.</span><span class="s-price">50 €</span></div>
-        <div class="service-item"><span class="s-name">Fußpflege mit Lack</span><span class="s-fill"></span><span class="s-dur">1 Std.</span><span class="s-price">55 €</span></div>
-        <div class="service-item"><span class="s-name">Pediküren mit Shellack</span><span class="s-fill"></span><span class="s-dur">1 Std. 10 Min.</span><span class="s-price">60 €</span></div>
+
+      <div class="service-detailed">
+        <div class="service-header">
+          <h4>Refill mit Natur &amp; Farbe</h4>
+          <div class="service-meta"><span class="duration">1 Std. 15 Min.</span> • <span class="price">50 €</span></div>
+        </div>
+        <div class="service-info"><strong>Inklusive:</strong></div>
+        <ul class="service-includes">
+          <li>Refill der Gel-/Acrylnägel</li>
+          <li>Kürzen und Form feilen</li>
+          <li>Nagelhautpflege</li>
+          <li>Auffüllen des herausgewachsenen Bereichs</li>
+          <li>Fullcover-Farbe (eine Farbe)</li>
+          <li>Versiegelung für langanhaltenden Glanz</li>
+          <li>Nagelöl zum Abschluss</li>
+        </ul>
+        <div class="service-info"><strong>Extras:</strong> French (+…) • Design (+…) • Glitter (+…) • Strasssteine (+…)</div>
+      </div>
+
+      <div class="service-detailed">
+        <div class="service-header">
+          <h4>Refill mit ein Paar Design Nägel</h4>
+          <div class="service-meta"><span class="duration">1 Std. 20 Min.</span> • <span class="price">55 €</span></div>
+        </div>
+        <div class="service-info"><strong>Inklusive:</strong></div>
+        <ul class="service-includes">
+          <li>Refill der Gelnägel</li>
+          <li>Kürzen und Form feilen</li>
+          <li>Nagelhautpflege</li>
+          <li>Auffüllen des herausgewachsenen Bereichs</li>
+          <li>Fullcover-Farbe + Design auf bis zu 2 Nägeln</li>
+          <li>Versiegelung für langanhaltenden Glanz</li>
+          <li>Nagelöl zum Abschluss</li>
+        </ul>
+        <div class="service-info"><strong>Extras:</strong> Mehr Designs • Handgemalte Nail Art • Chrome-Effekt • Strasssteine</div>
+      </div>
+
+      <div class="service-detailed">
+        <div class="service-header">
+          <h4>Refill mit French &amp; Babyboomer</h4>
+          <div class="service-meta"><span class="duration">1 Std. 30 Min.</span> • <span class="price">60 €</span></div>
+        </div>
+        <div class="service-info"><strong>Inklusive:</strong></div>
+        <ul class="service-includes">
+          <li>Refill der Gelnägel</li>
+          <li>Kürzen und Form feilen</li>
+          <li>Nagelhautpflege</li>
+          <li>French oder Babyboomer nach Wahl</li>
+          <li>Versiegelung für langanhaltenden Glanz</li>
+          <li>Nagelöl zum Abschluss</li>
+        </ul>
+      </div>
+
+      <div class="service-detailed">
+        <div class="service-header">
+          <h4>Verlängerung mit Farbe</h4>
+          <div class="service-meta"><span class="duration">1 Std. 30 Min.</span> • <span class="price">60 €</span></div>
+        </div>
+        <div class="service-info"><strong>Inklusive:</strong></div>
+        <ul class="service-includes">
+          <li>Nagelverlängerung mit Gel</li>
+          <li>Wunschlänge und -form</li>
+          <li>Nagelhautpflege</li>
+          <li>Fullcover-Farbe (eine Farbe)</li>
+          <li>Aufbau und Verstärkung</li>
+          <li>Versiegelung für langanhaltenden Glanz</li>
+          <li>Nagelöl zum Abschluss</li>
+        </ul>
+      </div>
+
+      <div class="service-detailed">
+        <div class="service-header">
+          <h4>Verlängerung mit ein Paar Nägel Design</h4>
+          <div class="service-meta"><span class="duration">1 Std. 30 Min.</span> • <span class="price">65 €</span></div>
+        </div>
+        <div class="service-info"><strong>Inklusive:</strong></div>
+        <ul class="service-includes">
+          <li>Nagelverlängerung mit Gel</li>
+          <li>Fullcover-Farbe + Design auf bis zu 2 Nägeln</li>
+          <li>Wunschlänge und -form</li>
+          <li>Aufbau und Verstärkung</li>
+          <li>Versiegelung für langanhaltenden Glanz</li>
+          <li>Nagelöl zum Abschluss</li>
+        </ul>
+      </div>
+
+      <div class="service-detailed">
+        <div class="service-header">
+          <h4>Verlängerung mit French &amp; Babyboomer</h4>
+          <div class="service-meta"><span class="duration">1 Std. 40 Min.</span> • <span class="price">70 €</span></div>
+        </div>
+        <div class="service-info"><strong>Inklusive:</strong></div>
+        <ul class="service-includes">
+          <li>Nagelverlängerung mit Gel</li>
+          <li>French oder Babyboomer nach Wahl</li>
+          <li>Wunschlänge und -form</li>
+          <li>Aufbau und Verstärkung</li>
+          <li>Versiegelung für langanhaltenden Glanz</li>
+          <li>Nagelöl zum Abschluss</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PEDIKÜRE -->
+    <div class="services-section" style="margin-top:56px; padding-top:56px; border-top:1px solid var(--line);">
+      <h3 class="service-category">🦶 Pediküre</h3>
+
+      <div class="service-detailed">
+        <div class="service-header">
+          <h4>Einfach Fußpflege</h4>
+          <div class="service-meta"><span class="duration">1 Std.</span> • <span class="price">50 €</span></div>
+        </div>
+        <div class="service-info"><strong>Inklusive:</strong></div>
+        <ul class="service-includes">
+          <li>Fußbad</li>
+          <li>Nägel kürzen und in Form feilen</li>
+          <li>Nagelhautpflege</li>
+          <li>Hornhaut entfernen</li>
+          <li>Abschlusspflege mit Fußcreme</li>
+        </ul>
+      </div>
+
+      <div class="service-detailed">
+        <div class="service-header">
+          <h4>Fußpflege mit Lack</h4>
+          <div class="service-meta"><span class="duration">1 Std.</span> • <span class="price">55 €</span></div>
+        </div>
+        <div class="service-info"><strong>Inklusive:</strong></div>
+        <ul class="service-includes">
+          <li>Fußbad</li>
+          <li>Nägel kürzen und in Form feilen</li>
+          <li>Nagelhautpflege</li>
+          <li>Hornhaut entfernen</li>
+          <li>Lackieren mit klassischem Nagellack</li>
+          <li>Abschlusspflege mit Fußcreme</li>
+        </ul>
+      </div>
+
+      <div class="service-detailed">
+        <div class="service-header">
+          <h4>Pediküren mit Shellack</h4>
+          <div class="service-meta"><span class="duration">1 Std. 10 Min.</span> • <span class="price">60 €</span></div>
+        </div>
+        <div class="service-info"><strong>Inklusive:</strong></div>
+        <ul class="service-includes">
+          <li>Fußbad</li>
+          <li>Nägel kürzen und in Form feilen</li>
+          <li>Nagelhautpflege</li>
+          <li>Hornhaut entfernen</li>
+          <li>Shellack in Wunschfarbe</li>
+          <li>Versiegelung für langanhaltenden Glanz</li>
+          <li>Abschlusspflege mit Fußcreme</li>
+        </ul>
       </div>
     </div>
 
@@ -380,6 +658,329 @@
         <div class="contact-row"><span class="label">Telefon</span><a class="value" href="tel:+4915151060767">+49 151 51060767</a></div>
         <div class="contact-row"><span class="label">Instagram</span><a class="value" href="https://www.instagram.com/vlada_gesundnails" target="_blank">@vlada_gesundnails</a></div>
         <div class="contact-row"><span class="label">Bewertung</span><span class="value">5.0 ★ · 29 Bewertungen</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PORTFOLIO ========== -->
+<section id="portfolio" style="background:rgba(92,35,51,0.02);">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Portfolio</h2>
+      <span class="num">05 — Galerie</span>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500&h=500&fit=crop" alt="Elegante French Nails">
+        <h4>Elegante French</h4>
+        <p>Klassisch & zeitlos</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500&h=500&fit=crop" alt="Glitter Design">
+        <h4>Glitter Glamour</h4>
+        <p>Funkelnde Pracht</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500&h=500&fit=crop" alt="Natürliche Pflege">
+        <h4>Natural Beauty</h4>
+        <p>Gesunde Naturnägel</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500&h=500&fit=crop" alt="Babyboomer">
+        <h4>Babyboomer Ombré</h4>
+        <p>Zartes Farbspiel</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500&h=500&fit=crop" alt="Künstlerische Designs">
+        <h4>Künstlerisch</h4>
+        <p>Kreative Unikate</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500&h=500&fit=crop" alt="Minimal Art">
+        <h4>Minimalist</h4>
+        <p>Weniger ist mehr</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BEHANDLUNGSDETAILS ========== -->
+<section id="behandlung">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Die Behandlung im Detail</h2>
+      <span class="num">06 — Prozess</span>
+    </div>
+    <div class="treatment-steps">
+      <div class="treatment-step">
+        <div class="step-num">01</div>
+        <h3>Beratung</h3>
+        <p>Wir besprechen gemeinsam Deine Wünsche, Deine Nagelform und den besten Stil für Dich. Vlada berücksichtigt Deine Handform und persönliche Vorlieben.</p>
+      </div>
+      <div class="treatment-step">
+        <div class="step-num">02</div>
+        <h3>Vorbereitung</h3>
+        <p>Gründliche Reinigung und Desinfektion. Die Nagelhaut wird gepflegt, Nägel präzise geformt — immer mit Fokus auf Nagelgesundheit.</p>
+      </div>
+      <div class="treatment-step">
+        <div class="step-num">03</div>
+        <h3>Gestaltung</h3>
+        <p>Mit Hand und Auge: Präzise Modellage, kunstvolle Designs oder elegante Veredelung. Jeder Nagel erhält individuelle Aufmerksamkeit.</p>
+      </div>
+      <div class="treatment-step">
+        <div class="step-num">04</div>
+        <h3>Finish & Versiegelung</h3>
+        <p>Langlebiges Versiegeln für maximale Haltbarkeit. Die perfekte Oberflächenfinish — glänzend, matt oder mit persönlicher Note.</p>
+      </div>
+      <div class="treatment-step">
+        <div class="step-num">05</div>
+        <h3>Nachsorge-Tipps</h3>
+        <p>Du erhältst konkrete Tipps zur Pflege Deiner neuen Nägel — damit sie lange schön bleiben und die Nägel gesund nachwachsen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BEFORE & AFTER ========== -->
+<section id="beforeafter" style="background:rgba(92,35,51,0.02);">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Vorher & Nachher</h2>
+      <span class="num">07 — Transformationen</span>
+    </div>
+    <div class="beforeafter-grid">
+      <div class="beforeafter-card">
+        <div class="ba-images">
+          <div class="ba-before"><p>VORHER</p><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=400&fit=crop" alt="Vorher"></div>
+          <div class="ba-after"><p>NACHHER</p><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=400&fit=crop" alt="Nachher"></div>
+        </div>
+        <h4>Reparatur & Neubau</h4>
+        <p>Beschädigte Nägel → Strahlend schön</p>
+      </div>
+      <div class="beforeafter-card">
+        <div class="ba-images">
+          <div class="ba-before"><p>VORHER</p><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=400&fit=crop" alt="Vorher"></div>
+          <div class="ba-after"><p>NACHHER</p><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=400&fit=crop" alt="Nachher"></div>
+        </div>
+        <h4>Kurz zu Lang</h4>
+        <p>Verlängerung mit Design</p>
+      </div>
+      <div class="beforeafter-card">
+        <div class="ba-images">
+          <div class="ba-before"><p>VORHER</p><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=400&fit=crop" alt="Vorher"></div>
+          <div class="ba-after"><p>NACHHER</p><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=400&fit=crop" alt="Nachher"></div>
+        </div>
+        <h4>Natürlich zu Elegant</h4>
+        <p>Von Natur zur Kunst</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BELIEBTE DESIGNS ========== -->
+<section id="popular">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Meistbegeisterte Designs</h2>
+      <span class="num">08 — Top 4</span>
+    </div>
+    <div class="popular-grid">
+      <div class="popular-card">
+        <div class="popular-image"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=400&fit=crop" alt="French Babyboomer"></div>
+        <h3>French Babyboomer</h3>
+        <p>Das meistangeforderte Design: Elegante Farbverläufe mit klassischem French-Abschluss. Zeitlos & vielseitig einsetzbar.</p>
+        <div class="popular-meta"><span class="badge">★★★★★ sehr beliebt</span></div>
+      </div>
+      <div class="popular-card">
+        <div class="popular-image"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=400&fit=crop" alt="Nude Ombré"></div>
+        <h3>Nude Ombré</h3>
+        <p>Perfekt für den Alltag: Warme Übergänge in Nude- und Rosatönen. Modern, elegant & minimal pflegebedürftig.</p>
+        <div class="popular-meta"><span class="badge">★★★★★ sehr beliebt</span></div>
+      </div>
+      <div class="popular-card">
+        <div class="popular-image"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=400&fit=crop" alt="Glitter & Gold"></div>
+        <h3>Glitter & Gold</h3>
+        <p>Für besondere Anlässe: Funkelnde Glitter-Akzente mit Golddetails. Glamourös & extravagant.</p>
+        <div class="popular-meta"><span class="badge">★★★★☆ sehr gefragt</span></div>
+      </div>
+      <div class="popular-card">
+        <div class="popular-image"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=400&fit=crop" alt="Natural Care"></div>
+        <h3>Natural Care</h3>
+        <p>Gesunde Naturnägel mit zartem Lack. Für alle, die ihre natürliche Nailhealth bewahren möchten.</p>
+        <div class="popular-meta"><span class="badge">★★★★☆ empfohlen</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SAISONALE DESIGNS ========== -->
+<section id="seasonal" style="background:rgba(92,35,51,0.02);">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Saisonale Designs</h2>
+      <span class="num">09 — Nach Jahreszeit</span>
+    </div>
+    <div class="seasonal-grid">
+      <div class="seasonal-item">
+        <h3>🌸 Frühling</h3>
+        <p><strong>Frische Farben:</strong> Pastelltöne, Blumenmuster, zarte Designs. Pastell-Pink, Mint & Weiß. Ideal für Neuanfänge.</p>
+      </div>
+      <div class="seasonal-item">
+        <h3>☀️ Sommer</h3>
+        <p><strong>Bunte Vielfalt:</strong> Leuchtende Farben, Strand-Motive, Glitzer. Neon, Korallen & Weiß. Perfekt für Urlaub & Freizeit.</p>
+      </div>
+      <div class="seasonal-item">
+        <h3>🍂 Herbst</h3>
+        <p><strong>Warme Töne:</strong> Kastanien, Goldbraun, Bordeaux & Kupfer. Geometrische & herbstliche Muster. Elegant & gemütlich.</p>
+      </div>
+      <div class="seasonal-item">
+        <h3>❄️ Winter</h3>
+        <p><strong>Festliche Eleganz:</strong> Silber, Blau, Rot & Gold. Schneemuster, Glitter & Perlen. Für Weihnacht & Neujahr.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== AUSBILDUNG ========== -->
+<section id="bildung">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Ausbildung & Qualifikationen</h2>
+      <span class="num">10 — Expertentum</span>
+    </div>
+    <div class="education-grid">
+      <div class="education-item">
+        <h3>🏆 Wettbewerbserfahrung</h3>
+        <p><strong>Olympia-Preisträgerin:</strong> Ausgezeichnet bei internationalen Nagelwettbewerben in Deutschland. Unter den besten Nageldesignern im deutschsprachigen Raum.</p>
+      </div>
+      <div class="education-item">
+        <h3>🎓 Professionelle Ausbildung</h3>
+        <p><strong>Zertifiziert & akkreditiert:</strong> Umfassende Schulung in Nageldesign, Nageltechnologie & Hygienestandards. Regelmäßige Fortbildungen.</p>
+      </div>
+      <div class="education-item">
+        <h3>🧪 Materialwissen</h3>
+        <p><strong>Premium-Materialien:</strong> Tiefes Verständnis für Gele, Lacke & Nagelpflegeprodukte. Nur hochwertige Materialien für die Gesundheit Deiner Nägel.</p>
+      </div>
+      <div class="education-item">
+        <h3>💡 Innovation & Trends</h3>
+        <p><strong>Immer auf dem Laufenden:</strong> Regelmäßige Teilnahme an Workshops & Masterclasses. Verfolgung neuer Designs & Techniken weltweit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== NACHSORGE-GUIDE ========== -->
+<section id="nachsorge" style="background:rgba(92,35,51,0.02);">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Nachsorge & Nagelpflege</h2>
+      <span class="num">11 — Tipps & Tricks</span>
+    </div>
+    <div class="care-tips">
+      <div class="care-item">
+        <h3>✋ Die ersten 24 Stunden</h3>
+        <p>Nach der Behandlung solltest Du Wasser & Feuchtigkeit vermeiden. Gib Deinen Nägeln Zeit, vollständig auszuhärten. Kein Duschen oder Baden für mindestens 2-3 Stunden.</p>
+      </div>
+      <div class="care-item">
+        <h3>💧 Hydration ist Key</h3>
+        <p>Trage täglich Nagel- & Handöl auf. Dies hält Deine Naturnägel unter den Kunstnägeln gesund & fördert das Wachstum. Verwende ölfreie Seifen.</p>
+      </div>
+      <div class="care-item">
+        <h3>🧼 Sanfte Reinigung</h3>
+        <p>Nutze beim Abwaschen Handschuhe, um aggressive Chemikalien zu vermeiden. Verwende pH-neutrale Seifen. Die tägliche Pflege macht den Unterschied!</p>
+      </div>
+      <div class="care-item">
+        <h3>🛡️ Schutz im Alltag</h3>
+        <p>Vermeide intensive Belastung in der ersten Woche. Verwende Deine Nägel nicht als Werkzeuge. Trage bei Gartenarbeit & Reinigung Handschuhe.</p>
+      </div>
+      <div class="care-item">
+        <h3>🔄 Regelmäßiger Refill</h3>
+        <p>Alle 3-4 Wochen einen Refill zur Erhaltung ist ideal. So bleiben Deine Nägel immer in Topform. Wir helfen Dir, einen Rhythmus zu finden.</p>
+      </div>
+      <div class="care-item">
+        <h3>⚠️ Wenn etwas nicht stimmt</h3>
+        <p>Bei Rötung, Schwellung oder Schmerzen kontaktiere Vlada sofort. Frühe Intervention ist wichtig. Deine Nagelgesundheit ist absolute Priorität!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BLOG ========== -->
+<section id="blog">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Blog & Tipps</h2>
+      <span class="num">12 — Insights</span>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-date">Aug 2026</div>
+        <h3>Warum Nagelgesundheit wichtiger ist als Ästhetik</h3>
+        <p>Die Gesundheit Deiner Nägel ist Fundament für Schönheit. Erfahre, wie Du mit den richtigen Gewohnheiten langfristig starke, glänzende Nägel aufbaust — mit oder ohne Design.</p>
+        <a href="#" class="blog-link">Artikel lesen →</a>
+      </article>
+      <article class="blog-card">
+        <div class="blog-date">Aug 2026</div>
+        <h3>Sommer-Nails: Diese Farben dominieren 2026</h3>
+        <p>Von Korall bis Türkis: Entdecke die Trend-Farben für den Sommer. Welche Töne passen zu Deinem Teint? Ein Style-Guide für alle Hauttypen.</p>
+        <a href="#" class="blog-link">Artikel lesen →</a>
+      </article>
+      <article class="blog-card">
+        <div class="blog-date">Juli 2026</div>
+        <h3>Gelnägel vs. Shellack: Der große Vergleich</h3>
+        <p>Was ist der Unterschied? Welche Option hält länger? Für wen eignet sich was? Ein ehrlicher Überblick über die beliebtesten Techniken.</p>
+        <a href="#" class="blog-link">Artikel lesen →</a>
+      </article>
+      <article class="blog-card">
+        <div class="blog-date">Juli 2026</div>
+        <h3>Deine Naturnägel brauchen Pausen</h3>
+        <p>Kunstnägel sind schön — doch regelmäßige Pausen tun den Naturnägeln gut. Erfahre, wie oft ein Refill-Abstand ideal ist und was in der Zeit hilft.</p>
+        <a href="#" class="blog-link">Artikel lesen →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ERWEITERTE FAQ ========== -->
+<section id="faq" style="background:rgba(92,35,51,0.02);">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Häufige Fragen</h2>
+      <span class="num">13 — Q&A</span>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>Wie lange halten Gelnägel?</h3>
+        <p>Mit guter Pflege halten hochwertige Gelnägel 3-4 Wochen. Ein Refill ist dann ideal. Naturgele & Premium-Materialien halten oft länger.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Sind Gelnägel schädlich?</h3>
+        <p>Nein, wenn sie richtig gemacht & gepflegt werden. Wichtig: regelmäßige Pausen, gute Hygiene & hochwertige Materialien. Vlada nutzt nur zertifizierte Produkte.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Kann ich meine Nägel selbst entfernen?</h3>
+        <p>Das ist nicht empfohlen — das beschädigt die Naturnägel. Vlada kann Deine Kunstnägel professionell & sicher in 10-15 Min. entfernen.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Was tun bei Rissen oder Splitting?</h3>
+        <p>Das kann durch Wassereinlagerung oder falsche Pflege passieren. Kontaktiere Vlada sofort — eine Reparatur ist oft schnell möglich.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Kann ich nach der Behandlung direkt duschen?</h3>
+        <p>Warte mindestens 2-3 Stunden. Die Gele brauchen Zeit zum vollständigen Aushärten. Nach dieser Zeit ist Wasser kein Problem mehr.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Welche Farbe passt zu mir?</h3>
+        <p>Das hängt von Deinem Hautton, Deinem Stil & dem Anlass ab. Vlada hilft Dir bei der Farbwahl — eine gute Beratung ist Teil jeder Behandlung!</p>
+      </div>
+      <div class="faq-item">
+        <h3>Kann ich mit Kunstnägeln alles machen?</h3>
+        <p>Ja, mit kleinen Anpassungen: Bei Gartenarbeit & intensiver Wasserarbeit trage Handschuhe. Nutze Deine Nägel nicht als Werkzeuge.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Wie oft sollte ich einen Refill machen?</h3>
+        <p>Im Idealfall alle 3-4 Wochen. So wachsen Deine Naturnägel gesund nach & Deine Kunstnägel bleiben immer perfekt.</p>
       </div>
     </div>
   </div>
