@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vlada Gesund Nails — Nageldesign in Rosenheim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F6F0E7;
+    --plum:#5C2333;
+    --plum-deep:#3E1721;
+    --blush:#E7C6BC;
+    --ink:#231D19;
+    --gold:#AD8752;
+    --line: rgba(35,29,25,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 32px;}
+  h1,h2,h3{font-family:'Fraunces', serif; font-weight:450; letter-spacing:-0.01em;}
+
+  /* ---- NAV ---- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(246,240,231,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:74px;
+  }
+  .brand{
+    font-family:'Fraunces', serif;
+    font-size:1.3rem; font-weight:600;
+    letter-spacing:0.01em;
+  }
+  .brand span{color:var(--plum);}
+  .nav-links{display:flex; align-items:center; gap:28px; font-size:0.88rem;}
+  .nav-links a:not(.btn){opacity:0.75; transition:opacity .2s;}
+  .nav-links a:not(.btn):hover{opacity:1;}
+  .btn{
+    background:var(--plum); color:var(--cream);
+    padding:10px 20px; border-radius:2px;
+    font-size:0.85rem; font-weight:500;
+    letter-spacing:0.02em;
+    transition:background .2s, transform .2s;
+    display:inline-block;
+  }
+  .btn:hover{background:var(--plum-deep); transform:translateY(-1px);}
+  .btn:focus-visible, a:focus-visible, button:focus-visible{
+    outline:2px solid var(--gold); outline-offset:3px;
+  }
+
+  /* ---- HERO ---- */
+  .hero{
+    padding:64px 0 40px;
+    position:relative;
+  }
+  .hero .wrap{
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center;
+  }
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--plum); margin-bottom:18px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:''; width:22px; height:1px; background:var(--plum);}
+  .hero h1{
+    font-size:clamp(2.6rem, 4.6vw, 3.6rem);
+    line-height:1.05;
+    margin-bottom:22px;
+  }
+  .hero h1 em{font-style:italic; color:var(--plum); font-weight:450;}
+  .hero p.lede{
+    font-size:1.05rem; line-height:1.65; opacity:0.82; max-width:44ch; margin-bottom:30px;
+  }
+  .hero-actions{display:flex; align-items:center; gap:22px; flex-wrap:wrap;}
+  .rating-pill{
+    display:flex; align-items:center; gap:8px;
+    font-size:0.88rem;
+  }
+  .stars{color:var(--gold); letter-spacing:1px;}
+  .hero-photo{
+    position:relative;
+    aspect-ratio: 4/5;
+    border-radius:2px;
+    overflow:hidden;
+    box-shadow:0 30px 60px -20px rgba(60,20,25,0.35);
+  }
+  .hero-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .badge-float{
+    position:absolute; bottom:18px; left:18px;
+    background:var(--cream); padding:14px 18px;
+    border-radius:2px; box-shadow:0 10px 30px rgba(0,0,0,0.18);
+    max-width:220px;
+  }
+  .badge-float .label{font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--plum); margin-bottom:4px;}
+  .badge-float .val{font-family:'Fraunces',serif; font-size:1rem;}
+
+  /* ---- GALLERY STRIP ---- */
+  .gallery-strip{
+    display:grid; grid-template-columns:repeat(5,1fr); gap:6px;
+    padding:6px 0 0;
+  }
+  .gallery-strip img{
+    width:100%; height:150px; object-fit:cover; display:block;
+    filter:saturate(1.02);
+  }
+
+  /* ---- SECTION SHARED ---- */
+  section{padding:80px 0;}
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    margin-bottom:44px; gap:24px; flex-wrap:wrap;
+    border-bottom:1px solid var(--line); padding-bottom:24px;
+  }
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);}
+  .section-head .num{font-family:'Space Mono',monospace; font-size:0.75rem; opacity:0.5;}
+
+  /* ---- ABOUT ---- */
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px;}
+  .about-grid p{line-height:1.75; opacity:0.85; margin-bottom:16px; font-size:0.98rem;}
+  .credentials{display:flex; flex-direction:column; gap:0;}
+  .credential{
+    display:flex; gap:18px; padding:18px 0; border-bottom:1px solid var(--line);
+  }
+  .credential:first-child{padding-top:0;}
+  .credential .icon{
+    font-family:'Fraunces',serif; font-size:1.4rem; color:var(--plum); min-width:34px;
+  }
+  .credential h4{font-size:0.95rem; margin-bottom:4px; font-weight:600; font-family:'Inter',sans-serif;}
+  .credential p{font-size:0.86rem; opacity:0.7; margin:0; line-height:1.5;}
+
+  /* ---- SERVICES (menu style) ---- */
+  .services-cols{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  .service-cat h3{
+    font-size:1.15rem; margin-bottom:6px;
+  }
+  .service-cat .cat-tag{
+    font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.1em;
+    text-transform:uppercase; color:var(--plum); display:block; margin-bottom:18px;
+  }
+  .service-item{
+    display:flex; align-items:baseline; gap:8px;
+    padding:14px 0; border-bottom:1px dotted var(--line);
+  }
+  .service-item .s-name{font-size:0.95rem; font-weight:500;}
+  .service-item .s-dur{font-size:0.76rem; opacity:0.55; font-family:'Space Mono',monospace; white-space:nowrap;}
+  .service-item .s-fill{flex:1; border-bottom:1px dotted var(--line); position:relative; top:-4px;}
+  .service-item .s-price{font-family:'Space Mono',monospace; font-size:0.92rem; font-weight:700; color:var(--plum); white-space:nowrap;}
+
+  /* ---- AVAILABILITY ---- */
+  .avail-strip{
+    display:flex; gap:0; flex-wrap:wrap;
+    border:1px solid var(--line); border-radius:2px; overflow:hidden;
+    margin-top:44px;
+  }
+  .avail-day{
+    flex:1; min-width:110px; padding:16px 14px; border-right:1px solid var(--line);
+    text-align:center;
+  }
+  .avail-day:last-child{border-right:none;}
+  .avail-day .d{font-family:'Space Mono',monospace; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.06em; opacity:0.55; margin-bottom:6px;}
+  .avail-day .t{font-size:0.86rem; font-weight:500;}
+
+  /* ---- REVIEWS ---- */
+  .review-band{background:var(--plum); color:var(--cream);}
+  .review-band .section-head{border-bottom-color:rgba(246,240,231,0.2);}
+  .review-band .section-head .num{opacity:0.6;}
+  .reviews-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  .review-card{
+    background:rgba(246,240,231,0.06);
+    border:1px solid rgba(246,240,231,0.16);
+    padding:26px 24px; border-radius:2px;
+  }
+  .review-card .stars{color:var(--gold); margin-bottom:14px; display:block; letter-spacing:2px;}
+  .review-card p{font-size:0.92rem; line-height:1.6; opacity:0.92; margin-bottom:18px;}
+  .review-card .meta{font-family:'Space Mono',monospace; font-size:0.72rem; opacity:0.65;}
+
+  /* ---- LOCATION / CONTACT ---- */
+  .loc-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
+  .loc-grid img{width:100%; border-radius:2px; display:block;}
+  .contact-list{display:flex; flex-direction:column; gap:0;}
+  .contact-row{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:20px 0; border-bottom:1px solid var(--line);
+  }
+  .contact-row .label{font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase; opacity:0.55;}
+  .contact-row .value{font-size:0.98rem; font-weight:500;}
+  .contact-row .value:hover{color:var(--plum);}
+
+  /* ---- CTA FOOTER ---- */
+  .cta-final{
+    text-align:center; padding:100px 0 70px;
+  }
+  .cta-final h2{font-size:clamp(2rem,4vw,2.8rem); margin-bottom:20px;}
+  .cta-final p{opacity:0.75; margin-bottom:34px; max-width:44ch; margin-left:auto; margin-right:auto;}
+  footer{
+    border-top:1px solid var(--line); padding:36px 0; font-size:0.8rem; opacity:0.6;
+  }
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;}
+
+  @media (max-width: 860px){
+    .hero .wrap{grid-template-columns:1fr; gap:36px;}
+    .hero-photo{order:-1;}
+    .about-grid, .services-cols, .loc-grid, .reviews-grid{grid-template-columns:1fr; gap:36px;}
+    .gallery-strip{grid-template-columns:repeat(3,1fr);}
+    .gallery-strip img:nth-child(4), .gallery-strip img:nth-child(5){display:none;}
+    .avail-day{min-width:33%;}
+    .nav-links{gap:16px; font-size:0.8rem;}
+    .nav-links a:not(.btn){display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Vlada <span>Gesund Nails</span></div>
+    <div class="nav-links">
+      <a href="#angebot">Angebot</a>
+      <a href="#bewertungen">Bewertungen</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="btn" href="https://beautinda.de/book/UPpRVEiQCadOSLmZ5o8Wfs9qrXl1/orders">Termin buchen</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Nageldesignerin · Rosenheim</div>
+      <h1>Präzision, die man <em>fühlt</em> — nicht nur sieht.</h1>
+      <p class="lede">Über 10 Jahre Erfahrung, ausgezeichnet bei internationalen Nagelwettbewerben. Vlada verbindet Wettbewerbsqualität mit dem, was am Ende zählt: gesunde, gepflegte Naturnägel.</p>
+      <div class="hero-actions">
+        <a class="btn" href="https://beautinda.de/book/UPpRVEiQCadOSLmZ5o8Wfs9qrXl1/orders">Behandlung auswählen</a>
+        <div class="rating-pill"><span class="stars">★★★★★</span> 5.0 · 29 Bewertungen</div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="https://firebasestorage.googleapis.com/v0/b/beautinda-prod.appspot.com/o/Artist%2FUPpRVEiQCadOSLmZ5o8Wfs9qrXl1%2FProfilbild?alt=media&token=5dc97d99-7ea0-4455-93de-a1d51bac480a" alt="Vlada, Nageldesignerin">
+      <div class="badge-float">
+        <div class="label">Auszeichnung</div>
+        <div class="val">Olympia-Preisträgerin</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="gallery-strip">
+  <img src="images/nail-01.png" alt="Nageldesign Arbeit — Herzchen-Design auf French">
+  <img src="images/nail-02.png" alt="Nageldesign Arbeit — Kirsch-Design auf Naturnägeln">
+  <img src="images/nail-03.png" alt="Nageldesign Arbeit — Nude Ombré Mandelform">
+  <img src="images/nail-04.png" alt="Nageldesign Arbeit — Zartrosa Glanzlack">
+  <img src="images/nail-05.png" alt="Nageldesign Arbeit — Nude Glanzlack mit Glitter">
+</div>
+
+<section id="ueber">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Über Vlada</h2>
+      <span class="num">01 — Profil</span>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>Als internationale Nageldesignerin mit über 10 Jahren Erfahrung steht Vlada für höchste Präzision, Kreativität und Qualität im Bereich professionelles Nageldesign. Ursprünglich aus der Ukraine, hat sie sich durch ihr außergewöhnliches Talent und ihre Leidenschaft für die Beauty-Branche einen Namen gemacht.</p>
+        <p>Ihre Arbeit wurde bereits bei Nagelwettbewerben in Deutschland ausgezeichnet, wo sie als Olympia-Preisträgerin ihr Können auf internationalem Niveau unter Beweis gestellt hat. Diese Erfahrung spiegelt sich in jeder Behandlung wider — von der perfekten Form bis hin zum feinsten Detail.</p>
+        <p>Besonders bekannt ist sie für kreative und individuelle Nageldesigns. Ob elegante, natürliche Nägel oder aufwendige, künstlerische Designs — jede Kundin erhält ein maßgeschneidertes Ergebnis, das perfekt zu ihrem Stil passt.</p>
+      </div>
+      <div class="credentials">
+        <div class="credential">
+          <div class="icon">10+</div>
+          <div><h4>Jahre Erfahrung</h4><p>Internationale Praxis im professionellen Nageldesign.</p></div>
+        </div>
+        <div class="credential">
+          <div class="icon">★</div>
+          <div><h4>Olympia-Preisträgerin</h4><p>Ausgezeichnet bei Nagelwettbewerben in Deutschland.</p></div>
+        </div>
+        <div class="credential">
+          <div class="icon">✓</div>
+          <div><h4>Fokus auf Nagelgesundheit</h4><p>Gesunde Naturnägel und gepflegte Haut stehen im Mittelpunkt jeder Behandlung.</p></div>
+        </div>
+        <div class="credential">
+          <div class="icon">5.0</div>
+          <div><h4>Top Rated</h4><p>Gehört zu den bestbewerteten Anbieterinnen auf Beautinda.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="angebot" style="background:rgba(92,35,51,0.04);">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Das Angebot</h2>
+      <span class="num">02 — Leistungen</span>
+    </div>
+    <div class="services-cols">
+      <div class="service-cat">
+        <span class="cat-tag">Kategorie</span>
+        <h3>Maniküre</h3>
+        <div class="service-item"><span class="s-name">Einfach Maniküre</span><span class="s-fill"></span><span class="s-dur">1 Std.</span><span class="s-price">30 €</span></div>
+        <div class="service-item"><span class="s-name">Refill mit Natur &amp; Farbe</span><span class="s-fill"></span><span class="s-dur">1 Std. 15 Min.</span><span class="s-price">50 €</span></div>
+        <div class="service-item"><span class="s-name">Refill mit ein Paar Design Nägel</span><span class="s-fill"></span><span class="s-dur">1 Std. 20 Min.</span><span class="s-price">55 €</span></div>
+        <div class="service-item"><span class="s-name">Refill mit French &amp; Babyboomer</span><span class="s-fill"></span><span class="s-dur">1 Std. 30 Min.</span><span class="s-price">60 €</span></div>
+        <div class="service-item"><span class="s-name">Verlängerung mit Farbe</span><span class="s-fill"></span><span class="s-dur">1 Std. 30 Min.</span><span class="s-price">60 €</span></div>
+        <div class="service-item"><span class="s-name">Verlängerung mit ein Paar Nägel Design</span><span class="s-fill"></span><span class="s-dur">1 Std. 30 Min.</span><span class="s-price">65 €</span></div>
+        <div class="service-item"><span class="s-name">Verlängerung mit French &amp; Babyboomer</span><span class="s-fill"></span><span class="s-dur">1 Std. 40 Min.</span><span class="s-price">70 €</span></div>
+      </div>
+      <div class="service-cat">
+        <span class="cat-tag">Kategorie</span>
+        <h3>Pediküre</h3>
+        <div class="service-item"><span class="s-name">Einfach Fußpflege</span><span class="s-fill"></span><span class="s-dur">1 Std.</span><span class="s-price">50 €</span></div>
+        <div class="service-item"><span class="s-name">Fußpflege mit Lack</span><span class="s-fill"></span><span class="s-dur">1 Std.</span><span class="s-price">55 €</span></div>
+        <div class="service-item"><span class="s-name">Pediküren mit Shellack</span><span class="s-fill"></span><span class="s-dur">1 Std. 10 Min.</span><span class="s-price">60 €</span></div>
+      </div>
+    </div>
+
+    <div class="avail-strip">
+      <div class="avail-day"><div class="d">Di</div><div class="t">08–22 Uhr</div></div>
+      <div class="avail-day"><div class="d">Mi</div><div class="t">08–22 Uhr</div></div>
+      <div class="avail-day"><div class="d">Do</div><div class="t">08–22 Uhr</div></div>
+      <div class="avail-day"><div class="d">Fr</div><div class="t">08–22 Uhr</div></div>
+      <div class="avail-day"><div class="d">Sa</div><div class="t">08–22 Uhr</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="bewertungen" class="review-band">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Was Kundinnen sagen</h2>
+      <span class="num">03 — 5.0 · 29 Bewertungen</span>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <p>Nägel beim Vlada sind immer PERFEKT.</p>
+        <div class="meta">Teodora — Juli 2026 · Refill mit Natur &amp; Farbe</div>
+      </div>
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <p>Sehr professionell, sehr zufrieden und sehr gute Arbeit.</p>
+        <div class="meta">Martina — Juni 2026 · Pediküren mit Shellack</div>
+      </div>
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <p>Präzise und saubere Arbeit — das Achten auf Hygiene war der ausschlaggebende Punkt.</p>
+        <div class="meta">Natalie — Juni 2026 · Verlängerung mit Farbe</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Termin &amp; Standort</h2>
+      <span class="num">04 — Kontakt</span>
+    </div>
+    <div class="loc-grid">
+      <img src="https://api.maptiler.com/maps/019961b9-a29e-7795-9c81-e94a9b325473/static/12.1244104,47.85619519999999,15/1000x500@2x.png?key=19IdEHfmmDQRMmKv5Str" alt="Kartenausschnitt Prinzregentenstraße 14, Rosenheim">
+      <div class="contact-list">
+        <div class="contact-row"><span class="label">Adresse</span><a class="value" href="https://www.google.com/maps?q=47.85619519999999,12.1244104" target="_blank">Prinzregentenstraße 14, Rosenheim</a></div>
+        <div class="contact-row"><span class="label">Telefon</span><a class="value" href="tel:+4915151060767">+49 151 51060767</a></div>
+        <div class="contact-row"><span class="label">Instagram</span><a class="value" href="https://www.instagram.com/vlada_gesundnails" target="_blank">@vlada_gesundnails</a></div>
+        <div class="contact-row"><span class="label">Bewertung</span><span class="value">5.0 ★ · 29 Bewertungen</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-final">
+  <div class="wrap">
+    <h2>Bereit für gesunde, gepflegte Nägel?</h2>
+    <p>Sichere dir jetzt deinen Termin und erlebe professionelles Nageldesign auf internationalem Wettbewerbsniveau.</p>
+    <a class="btn" href="https://beautinda.de/book/UPpRVEiQCadOSLmZ5o8Wfs9qrXl1/orders">Termin buchen</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Vlada Gesund Nails, Rosenheim</span>
+    <span>Prinzregentenstraße 14 · +49 151 51060767</span>
+  </div>
+</footer>
+
+</body>
+</html>
