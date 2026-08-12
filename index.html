@@ -339,21 +339,23 @@
     .hero-actions{gap:14px;}
     .brand{font-size:1.1rem;}
     .nav-links{gap:12px;}
-    .about-grid, .services-cols, .loc-grid, .reviews-grid, .portfolio-grid, .treatment-steps, .beforeafter-grid, .popular-grid, .seasonal-grid, .education-grid, .care-tips, .blog-grid, .faq-grid{grid-template-columns:1fr; gap:24px;}
+    .about-grid, .services-cols, .loc-grid, .reviews-grid, .treatment-steps, .beforeafter-grid, .seasonal-grid, .education-grid, .care-tips, .blog-grid, .faq-grid{grid-template-columns:1fr; gap:24px;}
+    .portfolio-grid, .popular-grid{grid-template-columns:1fr; gap:24px;}
     .services-cols{margin-bottom:48px; gap:40px;}
     .service-item{padding:12px 0;}
-    .gallery-strip{grid-template-columns:repeat(2,1fr); gap:6px; padding:8px 18px 0;}
-    .gallery-strip img{height:120px;}
+    .gallery-strip{grid-template-columns:1fr; gap:8px; padding:8px 18px 0;}
+    .gallery-strip img{height:200px; width:100%; object-fit:cover;}
     section{padding:48px 0;}
     .section-head{margin-bottom:32px; padding-bottom:20px;}
     .cta-final{padding:72px 0 56px;}
     .cta-final h2{font-size:clamp(1.6rem, 5vw, 2.2rem); margin-bottom:16px;}
     footer{padding:32px 0;}
-    .portfolio-grid{grid-template-columns:repeat(2,1fr);}
     .treatment-step .step-num{font-size:1.8rem;}
     .ba-images{grid-template-columns:1fr;}
     .beforeafter-card h4{padding:14px 14px 6px;}
     .beforeafter-card p{padding:0 14px 14px;}
+    .popular-card, .portfolio-item{margin-bottom:12px;}
+    .popular-image{width:100%; height:auto;}
   }
 </style>
 </head>
