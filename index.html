@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vlada Gesund Nails — Nageldesign in Rosenheim</title>
+<link rel="canonical" href="https://vladagesundnails.de">
+<meta property="og:url" content="https://vladagesundnails.de">
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="Vlada Gesund Nails — Nageldesign in Rosenheim">
+<meta property="og:description" content="Über 10 Jahre Erfahrung im professionellen Nageldesign. Vlada verbindet Wettbewerbsqualität mit gesunden, gepflegten Naturnägeln.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -119,7 +124,7 @@
     max-width:1080px; margin:0 auto;
   }
   .gallery-strip img{
-    width:100%; height:160px; object-fit:cover; display:block;
+    width:100%; height:200px; object-fit:cover; display:block;
     filter:saturate(1.02); border-radius:2px;
   }
 
@@ -260,7 +265,7 @@
   .portfolio-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
   .portfolio-item{text-align:center; cursor:pointer; transition:transform .3s;}
   .portfolio-item:hover{transform:translateY(-6px);}
-  .portfolio-item img{width:100%; aspect-ratio:1; object-fit:cover; border-radius:3px; margin-bottom:12px;}
+  .portfolio-item img{width:100%; aspect-ratio:1; object-fit:cover; border-radius:3px; margin-bottom:12px; min-height:250px;}
   .portfolio-item h4{font-size:1rem; margin-bottom:4px;}
   .portfolio-item p{font-size:0.85rem; opacity:0.6;}
 
@@ -334,21 +339,24 @@
     .hero-actions{gap:14px;}
     .brand{font-size:1.1rem;}
     .nav-links{gap:12px;}
-    .about-grid, .services-cols, .loc-grid, .reviews-grid, .portfolio-grid, .treatment-steps, .beforeafter-grid, .popular-grid, .seasonal-grid, .education-grid, .care-tips, .blog-grid, .faq-grid{grid-template-columns:1fr; gap:24px;}
+    .about-grid, .services-cols, .loc-grid, .reviews-grid, .treatment-steps, .beforeafter-grid, .seasonal-grid, .education-grid, .care-tips, .blog-grid, .faq-grid{grid-template-columns:1fr; gap:24px;}
+    .portfolio-grid, .popular-grid{grid-template-columns:1fr; gap:32px;}
+    .portfolio-item img, .popular-image img{min-height:300px;}
     .services-cols{margin-bottom:48px; gap:40px;}
     .service-item{padding:12px 0;}
-    .gallery-strip{grid-template-columns:repeat(2,1fr); gap:6px; padding:8px 18px 0;}
-    .gallery-strip img{height:120px;}
+    .gallery-strip{grid-template-columns:1fr; gap:12px; padding:12px 18px 0;}
+    .gallery-strip img{height:280px; width:100%; object-fit:cover;}
     section{padding:48px 0;}
     .section-head{margin-bottom:32px; padding-bottom:20px;}
     .cta-final{padding:72px 0 56px;}
     .cta-final h2{font-size:clamp(1.6rem, 5vw, 2.2rem); margin-bottom:16px;}
     footer{padding:32px 0;}
-    .portfolio-grid{grid-template-columns:repeat(2,1fr);}
     .treatment-step .step-num{font-size:1.8rem;}
     .ba-images{grid-template-columns:1fr;}
     .beforeafter-card h4{padding:14px 14px 6px;}
     .beforeafter-card p{padding:0 14px 14px;}
+    .popular-card, .portfolio-item{margin-bottom:12px;}
+    .popular-image{width:100%; height:auto;}
   }
 </style>
 </head>
